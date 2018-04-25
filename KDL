@@ -1,1 +1,8 @@
 参考：https://blog.csdn.net/zyf1109/article/details/53423830(Matlab Robotics Toolbox系列—使用篇)
+
+
+
+DH(a,alpha为定值)：
+a:关节长度
+alpha:关节旋转
+d:沿上一个关节z轴方向的位移
