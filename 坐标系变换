@@ -1,2 +1,6 @@
+R_X=[1 0 0 0;0 cos(alpha) -sin(alpha) 0;0 sin(alpha) cos(alpha) 0;0 0 0 1]; %绕x轴
+R_Y=[cos(beta) 0 sin(beta) 0;0 1 0 0;-sin(beta) 0 cos(beta) 0;0 0 0 1];
+R_Z=[cos(gama) -sin(gama) 0 0;sin(gama) cos(gama) 0 0;0 0 1 0;0 0 0 1];
+
 原始点（x0,y0,z0）不动，在变换后坐标系下位置（x1,y1,z1）; 坐标轴 顺时针
 原始点（x0,y0,z0）随坐标系变换，在原坐标系下位置（x1,y1,z1）; 坐标轴 逆时针
