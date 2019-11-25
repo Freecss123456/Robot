@@ -1,0 +1,4 @@
+自带机器人模型：mdl_puma560
+例如：
+>>mdl_puma560
+>>p560.plot(qn,  'workspace',[xmn, xmx ymn ymx zmn zmx]);
