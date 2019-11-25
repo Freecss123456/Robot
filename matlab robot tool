@@ -2,3 +2,20 @@
 例如：
 >>mdl_puma560
 >>p560.plot(qn,  'workspace',[xmn, xmx ymn ymx zmn zmx]);
+
+建立连杆：
+L = Link(DH, OPTIONS) 
+DH = [THETA D A ALPHA SIGMA OFFSET] 
+THETA D A ALPHA 为基本的DH参数 
+theta 关节角度 
+d 连杆偏移量 
+a 连杆长度 
+alpha 连杆扭角 
+Sigma 可以设定连杆的类型 0为旋转 1为伸长 
+offset 关节变量偏移量 
+qlim 关节变量范围[min max] 
+Options： 
+‘standard’ for standard D&H parameters (default). 
+‘modified’ for modified D&H parameters. 
+‘revolute’ 旋转关节(default) 
+‘prismatic’ 伸长关节
