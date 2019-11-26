@@ -19,3 +19,43 @@ Options：
 ‘modified’ for modified D&H parameters. 
 ‘revolute’ 旋转关节(default) 
 ‘prismatic’ 伸长关节
+
+%轨迹生成
+L1=Link([0 12.4 0 pi/2 0 -pi/2]);
+L2=Link([0 0 0 -pi/2 ]);
+L3=Link([0 15.43 0 pi/2 ]);
+Rbt=SerialLink([L1 L2 L3]);
+
+q0=[0 0 0];
+qsq1=[0.46088 0.37699 0];
+qsq2=[.81681 0.56549 0];
+
+t=0:.04:2;
+sqtraj1=jtraj(q0,qsq1,t); 
+sqtraj2=jtraj(qsq1,qsq2,t); 
+
+hold on
+atj=zeros(4,4);
+view(-35,40)
+xlim([-20,20])
+ylim([-20,20])
+zlim([0,30])
+for i=1:1:51    
+    atj=Rbt.fkine(sqtraj1(i,:));    
+    jta=transpose(atj.T);    
+    JTA(i,:)=jta(4,1:3);    
+    jta=JTA;    
+    plot2(jta(i,:),'r.')    
+    Rbt.plot(sqtraj1(i,:))    
+    plot2(JTA,'b')
+end
+for i=1:1:51
+    atj2=Rbt.fkine(sqtraj2(i,:));    
+    jta2=transpose(atj2.T);    
+    JTA2(i,:)=jta2(4,1:3);    
+    jta2=JTA2;    
+    plot2(jta2(i,:),'r.')    
+    Rbt.plot(sqtraj2(i,:))    
+    plot2(JTA2,'b')
+end
+%轨迹生成
