@@ -25,6 +25,7 @@ L1=Link([0 12.4 0 pi/2 0 -pi/2]);
 L2=Link([0 0 0 -pi/2 ]);
 L3=Link([0 15.43 0 pi/2 ]);
 Rbt=SerialLink([L1 L2 L3],'name','拆除机器人');
+Rbt.base=transl([0 0 0]);
 
 q0=[0 0 0];
 qsq1=[0.46088 0.37699 0];
